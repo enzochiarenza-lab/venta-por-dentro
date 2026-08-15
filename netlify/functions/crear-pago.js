@@ -26,9 +26,9 @@ exports.handler = async function (event, context) {
       },
     ],
     back_urls: {
-      success: "PEGAR_URL_DEL_SITIO_VPD_ACA/?pago=mp",
-      failure: "PEGAR_URL_DEL_SITIO_VPD_ACA/",
-      pending: "PEGAR_URL_DEL_SITIO_VPD_ACA/",
+      success: "https://laventapordentro.netlify.app/?pago=mp",
+      failure: "https://laventapordentro.netlify.app/",
+      pending: "https://laventapordentro.netlify.app/",
     },
     auto_return: "approved",
   };
@@ -49,7 +49,7 @@ exports.handler = async function (event, context) {
       console.error("Error de Mercado Pago:", data);
       return {
         statusCode: 302,
-        headers: { Location: "https://tallerdecierregracias.netlify.app/vpd.html" },
+        headers: { Location: "https://laventapordentro.netlify.app/" },
       };
     }
 
@@ -61,7 +61,7 @@ exports.handler = async function (event, context) {
     console.error(err);
     return {
       statusCode: 302,
-      headers: { Location: "https://tallerdecierregracias.netlify.app/vpd.html" },
+      headers: { Location: "https://laventapordentro.netlify.app/" },
     };
   }
 };
